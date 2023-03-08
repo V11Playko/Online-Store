@@ -9,8 +9,9 @@ public interface IProductServicePort {
      List<ProductModel> listAllProduct();
      ProductModel getProduct(Long id);
 
-     ProductModel createProduct(ProductModel product);
-     ProductModel updateProduct(ProductModel product);
-     ProductModel deleteProduct(Long id);List<ProductModel> findByCategory(CategoryModel category);
-     ProductModel updateStock(Long id, Double quantity);
+     void createProduct(ProductModel product);
+     void updateProduct(ProductModel product);
+     ProductModel deleteProduct(Long id);
+     List<ProductModel> findByCategory(CategoryModel category);
+     void updateStock(Long id, Double quantity);
 }

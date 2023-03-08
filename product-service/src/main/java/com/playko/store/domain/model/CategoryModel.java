@@ -1,27 +1,27 @@
 package com.playko.store.domain.model;
 
 public class CategoryModel {
-    private Long id;
-    private String name;
+    private Long idCategory;
+    private String nameCategory;
 
-    public CategoryModel(Long id, String name) {
-        this.id = id;
-        this.name = name;
+    public CategoryModel(Long idCategory, String nameCategory) {
+        this.idCategory = idCategory;
+        this.nameCategory = nameCategory;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdCategory() {
+        return idCategory;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdCategory(Long idCategory) {
+        this.idCategory = idCategory;
     }
 
-    public String getName() {
-        return name;
+    public String getNameCategory() {
+        return nameCategory;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameCategory(String nameCategory) {
+        this.nameCategory = nameCategory;
     }
 }

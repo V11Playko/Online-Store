@@ -5,7 +5,6 @@ import com.playko.store.domain.model.CategoryModel;
 import com.playko.store.domain.model.ProductModel;
 import com.playko.store.domain.spi.IProductPersistencePort;
 
-import java.util.Date;
 import java.util.List;
 
 public class ProductUseCase implements IProductServicePort {
@@ -24,18 +23,19 @@ public class ProductUseCase implements IProductServicePort {
     }
 
     @Override
-    public ProductModel createProduct(ProductModel product) {
-        return productPersistencePort.createProduct(product);
+    public void createProduct(ProductModel product) {
+        productPersistencePort.createProduct(product);
     }
 
     @Override
-    public ProductModel updateProduct(ProductModel product) {
-        return productPersistencePort.updateProduct(product);
+    public void updateProduct(ProductModel product) {
+        productPersistencePort.updateProduct(product);
     }
 
     @Override
     public ProductModel deleteProduct(Long id) {
-        return productPersistencePort.deleteProduct(id);
+        productPersistencePort.deleteProduct(id);
+        return null;
     }
 
     @Override
@@ -44,7 +44,9 @@ public class ProductUseCase implements IProductServicePort {
     }
 
     @Override
-    public ProductModel updateStock(Long id, Double quantity) {
-        return productPersistencePort.updateStock(id, quantity);
+    public void updateStock(Long id, Double quantity) {
+        productPersistencePort.updateStock(id, quantity);
     }
+
+
 }
