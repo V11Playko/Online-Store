@@ -21,7 +21,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional
 public class ProductHandler implements IProductHandler {
-    private final IProductRepository productRepository;
     private final IProductServicePort productServicePort;
     private final IProductRequestMapper productRequestMapper;
     private final IProductResponseMapper productResponseMapper;
@@ -51,6 +50,13 @@ public class ProductHandler implements IProductHandler {
         ProductModel productModel = productServicePort.getProduct(product.getId());
         if (Strings.isNotBlank(product.getDescription()) || Strings.isNotEmpty(product.getDescription())) productModel.setDescription(product.getDescription());
         if (product.getPrice() > 0) productModel.setPrice(product.getPrice());
+
+        productModel.setName(product.getName());
+        productModel.setDescription(product.getDescription());
+        productModel.setStock(product.getStock());
+        productModel.setPrice(product.getPrice());
+        productModel.setCategory(productModel.getCategory());
+
         productServicePort.updateProduct(productModel);
     }
 
@@ -60,6 +66,7 @@ public class ProductHandler implements IProductHandler {
         if (productModel == null){
             System.err.println("El producto no existe.");
         }
+        productModel.setStatus("DELETED");
         productServicePort.deleteProduct(id);
 
     }

@@ -20,5 +20,6 @@ public class ProductRequestDto {
     private Date createAt;
 
     // Category
-    private CategoryModel category;
+    private Long idCategory;
+    private String nameCategory;
 }
