@@ -10,9 +10,9 @@ public interface IProductPersistencePort {
     List<ProductModel> listAllProduct();
     ProductModel getProduct(Long id);
 
-    ProductModel createProduct(ProductModel product);
-    ProductModel updateProduct(ProductModel product);
-    ProductModel deleteProduct(Long id);
+    void createProduct(ProductModel product);
+    void updateProduct(ProductModel product);
+    void deleteProduct(Long id);
     List<ProductModel> findByCategory(CategoryModel category);
-    ProductModel updateStock(Long id, Double quantity);
+    void updateStock(Long id, Double quantity);
 }
