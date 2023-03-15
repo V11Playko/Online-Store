@@ -14,12 +14,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RequiredArgsConstructor
 public class BeanConfiguration {
-    @Bean
+    @Bean("productPersistencePort")
     public IProductPersistencePort productPersistencePort(IProductRepository productRepository, IProductEntityMapper productEntityMapper){
         return new ProductJpaAdapter(productRepository, productEntityMapper);
     }
 
-    @Bean
+    @Bean("productServicePort")
     public IProductServicePort productServicePort(IProductPersistencePort productPersistencePort) {
         return new ProductUseCase(productPersistencePort);
     }

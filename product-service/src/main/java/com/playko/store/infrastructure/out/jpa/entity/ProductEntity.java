@@ -1,7 +1,6 @@
 package com.playko.store.infrastructure.out.jpa.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,7 +22,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "productos")
+@Table(name = "tbl_products")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -47,7 +47,7 @@ public class ProductEntity implements Serializable {
     private String status;
     @Column( name = "createAt", length = 50)
     private Date createAt;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne( cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private CategoryEntity category;
 }
