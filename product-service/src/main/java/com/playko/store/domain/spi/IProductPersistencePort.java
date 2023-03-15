@@ -14,5 +14,4 @@ public interface IProductPersistencePort {
     void updateProduct(ProductModel product);
     void deleteProduct(Long id);
     List<ProductModel> findByCategory(CategoryModel category);
-    void updateStock(Long id, Double quantity);
 }

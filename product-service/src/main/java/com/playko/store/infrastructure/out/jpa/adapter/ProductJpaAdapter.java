@@ -51,15 +51,4 @@ public class ProductJpaAdapter implements IProductPersistencePort {
         List<ProductEntity> categoryList = productRepository.findAll();
         return productEntityMapper.toProductModelList(categoryList);
     }
-
-    @Override
-    public void updateStock(Long id, Double quantity) {
-        ProductModel productId = getProduct(id);
-        if (productId == null){
-            System.err.println("El producto no existe.");
-        }
-        Double stock = productId.getStock() + quantity;
-        productId.setStock(stock);
-        productRepository.save(productEntityMapper.toEntity(productId));
-    }
 }

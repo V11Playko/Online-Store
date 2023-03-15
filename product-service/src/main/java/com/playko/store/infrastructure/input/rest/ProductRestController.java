@@ -104,16 +104,6 @@ public class ProductRestController {
         productHandler.deleteProduct(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
-    @Operation(summary = "Updated Stock Product")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Updated Stock Product", content = @Content),
-            @ApiResponse(responseCode = "409", description = "Stock Product already exists", content = @Content)
-    })
-    @PutMapping("/{id}/stock")
-    public ResponseEntity<Void> updateStockProduct(@PathVariable Long id,@RequestParam(name = "quantity", required = true) Double quantity) {
-        productHandler.updateStock(id, quantity);
-        return ResponseEntity.status(HttpStatus.OK).build();
-    }
 
     private String formatMessage( BindingResult result){
         List<Map<String,String>> errors = result.getFieldErrors().stream()

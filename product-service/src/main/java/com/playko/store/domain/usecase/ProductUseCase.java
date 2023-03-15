@@ -43,10 +43,7 @@ public class ProductUseCase implements IProductServicePort {
         return productPersistencePort.findByCategory(category);
     }
 
-    @Override
-    public void updateStock(Long id, Double quantity) {
-        productPersistencePort.updateStock(id, quantity);
-    }
+
 
 
 }

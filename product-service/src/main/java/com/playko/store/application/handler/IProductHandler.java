@@ -14,5 +14,4 @@ public interface IProductHandler {
     void  updateProduct(ProductRequestDto product);
     void  deleteProduct(Long id);
     List<ProductResponseDto> findByCategory(CategoryModel category);
-    void  updateStock(Long id, Double quantity);
 }

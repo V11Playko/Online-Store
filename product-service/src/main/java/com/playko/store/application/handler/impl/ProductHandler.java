@@ -63,12 +63,6 @@ public class ProductHandler implements IProductHandler {
     @Override
     public void deleteProduct(Long id) {
         ProductModel productModel = productServicePort.deleteProduct(id);
-        if (productModel == null){
-            System.err.println("El producto no existe.");
-        }
-        productModel.setStatus("DELETED");
-        productServicePort.deleteProduct(id);
-
     }
 
     @Override
@@ -76,14 +70,4 @@ public class ProductHandler implements IProductHandler {
         return productResponseMapper.findByCategory(productServicePort.findByCategory(category));
     }
 
-    @Override
-    public void updateStock(Long id, Double quantity) {
-        ProductModel productModel = productServicePort.getProduct(id);
-        if (productModel == null) {
-            System.err.println("El producto no existe.");
-        }
-        Double stock = productModel.getStock() + quantity;
-        productModel.setStock(stock);
-        productServicePort.updateStock(id, stock);
-    }
 }
