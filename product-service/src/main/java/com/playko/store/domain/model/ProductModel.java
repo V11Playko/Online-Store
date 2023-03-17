@@ -23,6 +23,10 @@ public class ProductModel {
         this.category = category;
     }
 
+    public ProductModel() {
+
+    }
+
     public Long getId() {
         return id;
     }

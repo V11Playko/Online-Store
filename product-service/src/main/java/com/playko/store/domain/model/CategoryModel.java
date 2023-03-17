@@ -9,6 +9,10 @@ public class CategoryModel {
         this.nameCategory = nameCategory;
     }
 
+    public CategoryModel() {
+
+    }
+
     public Long getIdCategory() {
         return idCategory;
     }
