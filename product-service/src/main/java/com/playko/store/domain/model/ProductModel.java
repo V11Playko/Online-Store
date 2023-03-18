@@ -1,5 +1,7 @@
 package com.playko.store.domain.model;
 
+import com.playko.store.domain.exception.DomainException;
+
 import java.util.Date;
 
 public class ProductModel {
@@ -13,6 +15,13 @@ public class ProductModel {
     private CategoryModel category;
 
     public ProductModel(Long id, String name, String description, Double stock, Double price, String status, Date createAt, CategoryModel category) {
+        if (name.isEmpty()) throw new DomainException("Name cannot be blank");
+        if (description.isEmpty()) throw new DomainException("Description cannot be blank");
+        if (stock.toString().isEmpty()) throw new DomainException("Stock cannot be blank");
+        if (price.toString().isEmpty()) throw new DomainException("Price cannot be blank");
+        if (status.isEmpty()) throw new DomainException("Status cannot be blank");
+        if (createAt.toString().isEmpty()) throw new DomainException("CreateAt cannot be blank");
+
         this.id = id;
         this.name = name;
         this.description = description;
@@ -40,6 +49,7 @@ public class ProductModel {
     }
 
     public void setName(String name) {
+        if (name.isEmpty()) throw new DomainException("Name cannot be blank");
         this.name = name;
     }
 
@@ -48,6 +58,7 @@ public class ProductModel {
     }
 
     public void setDescription(String description) {
+        if (description.isEmpty()) throw new DomainException("Description cannot be blank");
         this.description = description;
     }
 
@@ -56,6 +67,7 @@ public class ProductModel {
     }
 
     public void setStock(Double stock) {
+        if (stock.toString().isEmpty()) throw new DomainException("Stock cannot be blank");
         this.stock = stock;
     }
 
@@ -64,6 +76,7 @@ public class ProductModel {
     }
 
     public void setPrice(Double price) {
+        if (price.toString().isEmpty()) throw new DomainException("Price cannot be blank");
         this.price = price;
     }
 
@@ -72,6 +85,7 @@ public class ProductModel {
     }
 
     public void setStatus(String status) {
+        if (status.isEmpty()) throw new DomainException("Status cannot be blank");
         this.status = status;
     }
 
@@ -80,6 +94,7 @@ public class ProductModel {
     }
 
     public void setCreateAt(Date createAt) {
+        if (createAt.toString().isEmpty()) throw new DomainException("CreateAt cannot be blank");
         this.createAt = createAt;
     }
 
