@@ -1,12 +1,12 @@
 #Application Configuration
 server:
-  port: 8081
+  port: 8082
 
 spring:
   application:
-    name: product-service
+    name: costumer-service
   datasource:
-    url: jdbc:mysql://localhost:3306/product-service
+    url: jdbc:mysql://localhost:3306/costumer-service
     username: root
     password: komodor11
   jpa:
