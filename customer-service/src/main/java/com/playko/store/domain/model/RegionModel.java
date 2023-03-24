@@ -1,20 +1,20 @@
 package com.playko.store.domain.model;
 
 public class RegionModel {
-    private Long id;
+    private Long idRegion;
     private String nameRegion;
 
-    public RegionModel(Long id, String nameRegion) {
-        this.id = id;
+    public RegionModel(Long idRegion, String nameRegion) {
+        this.idRegion = idRegion;
         this.nameRegion = nameRegion;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdRegion() {
+        return idRegion;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdRegion(Long idRegion) {
+        this.idRegion = idRegion;
     }
 
     public String getNameRegion() {

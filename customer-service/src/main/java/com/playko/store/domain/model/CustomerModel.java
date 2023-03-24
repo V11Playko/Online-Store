@@ -7,8 +7,9 @@ public class CustomerModel {
     private String lastName;
     private String email;
     private String photoUrl;
-    private RegionModel regionModel;
     private String state;
+    private RegionModel regionModel;
+
 
     public CustomerModel(Long id, String dni, String firstName, String lastName, String email, String photoUrl, RegionModel regionModel, String state) {
         this.id = id;

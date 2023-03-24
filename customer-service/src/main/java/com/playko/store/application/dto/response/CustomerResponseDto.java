@@ -13,6 +13,6 @@ public class CustomerResponseDto {
     private String lastName;
     private String email;
     private String photoUrl;
-    private RegionModel regionModel;
     private String state;
+    private RegionModel region;
 }

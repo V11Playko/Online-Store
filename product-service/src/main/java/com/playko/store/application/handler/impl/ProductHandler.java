@@ -38,7 +38,7 @@ public class ProductHandler implements IProductHandler {
 
     @Override
     public void createProduct(ProductRequestDto product) {
-        product.setStatus("CREATED");
+        product.setStatus("ALMACENADO");
         product.setCreateAt(new Date());
 
         ProductModel productModel = productRequestMapper.toProductRequest(product);

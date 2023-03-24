@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/costumer-service
     username: root
-    password: ${ROOT_PASSWORD}
+    password: komodor11
   jpa:
     hibernate:
       ddl-auto: update
