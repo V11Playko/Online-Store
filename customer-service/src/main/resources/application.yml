@@ -1,6 +1,6 @@
 #Application Configuration
 server:
-  port: 8082
+  port: 8081
 
 spring:
   application:
@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/costumer-service
     username: root
-    password: komodor11
+    password: ${ROOT_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
