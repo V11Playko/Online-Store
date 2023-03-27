@@ -1,0 +1,64 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.10'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.playko'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2021.0.6")
+	set('springCloudVersion', "2021.0.6")
+	springBootVersion = "2.7.3"
+	mapstructVersion = "1.5.2.Final"
+	lombokVersion = "1.18.24"
+	lombokMapstructBindingVersion = "0.2.0"
+	mySqlConnectorVersion = "8.0.32"
+	openApiVersion = "1.6.11"
+}
+
+dependencies {
+	//implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+	implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+	// implementation "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
+
+	implementation "org.springdoc:springdoc-openapi-ui:${openApiVersion}"
+	implementation "org.springdoc:springdoc-openapi-webflux-ui:${openApiVersion}"
+
+	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+	//implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	//implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	//implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:3.1.5'
+
+	compileOnly "org.projectlombok:lombok:${lombokVersion}"
+	runtimeOnly "mysql:mysql-connector-java:${mySqlConnectorVersion}"
+
+	annotationProcessor "org.projectlombok:lombok-mapstruct-binding:${lombokMapstructBindingVersion}"
+	annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+	testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
