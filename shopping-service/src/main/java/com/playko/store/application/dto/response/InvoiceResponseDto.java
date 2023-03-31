@@ -4,6 +4,7 @@ import com.playko.store.domain.model.InvoiceItemModel;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -16,5 +17,5 @@ public class InvoiceResponseDto {
     private Long customerId;
     private Date createAt;
     private String state;
-    private List<InvoiceItemModel> items;
+    private InvoiceItemModel item;
 }

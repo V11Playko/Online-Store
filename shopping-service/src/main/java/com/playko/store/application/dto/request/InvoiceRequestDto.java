@@ -20,6 +20,6 @@ public class InvoiceRequestDto {
     // Invoice Item
     private Long idItem;
     private Double quantityItem;
-    private Double price;
+    private Double priceItem;
     private Long productId;
 }

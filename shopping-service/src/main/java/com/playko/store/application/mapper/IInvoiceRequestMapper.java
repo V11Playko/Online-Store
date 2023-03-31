@@ -10,10 +10,9 @@ import org.mapstruct.ReportingPolicy;
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface IInvoiceRequestMapper {
-
     @Mapping(target = "items.idItem", source = "invoice.idItem")
     @Mapping(target = "items.quantityItem", source = "invoice.quantityItem")
-    @Mapping(target = "items.price", source = "invoice.price")
+    @Mapping(target = "items.price", source = "invoice.priceItem")
     @Mapping(target = "items.productId", source = "invoice.productId")
     InvoiceModel toInvoiceRequest(InvoiceRequestDto invoice);
 
