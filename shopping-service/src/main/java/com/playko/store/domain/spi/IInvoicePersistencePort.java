@@ -9,5 +9,5 @@ public interface IInvoicePersistencePort {
     InvoiceModel getInvoice(Long id);
     void createInvoice(InvoiceModel invoice);
     void updateInvoice(InvoiceModel invoice);
-    InvoiceModel deleteInvoice(Long id);
+    void deleteInvoice(Long id);
 }

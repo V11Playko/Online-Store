@@ -10,15 +10,16 @@ public class InvoiceModel {
     private Long customerId;
     private Date createAt;
     private String state;
-    private List<InvoiceItemModel> items;
-    public InvoiceModel(Long id, String number, String description, Long customerId, Date createAt, String state, List<InvoiceItemModel> items) {
+    private InvoiceItemModel item;
+
+    public InvoiceModel(Long id, String number, String description, Long customerId, Date createAt, String state, InvoiceItemModel item) {
         this.id = id;
         this.number = number;
         this.description = description;
         this.customerId = customerId;
         this.createAt = createAt;
         this.state = state;
-        this.items = items;
+        this.item = item;
     }
 
     public Long getId() {
@@ -69,11 +70,15 @@ public class InvoiceModel {
         this.state = state;
     }
 
-    public List<InvoiceItemModel> getItems() {
-        return items;
+    public InvoiceItemModel getItems() {
+        return item;
     }
 
-    public void setItems(List<InvoiceItemModel> items) {
-        this.items = items;
+    public void setItems(InvoiceItemModel item) {
+        this.item = item;
+    }
+
+    public InvoiceItemModel getItem() {
+        return item;
     }
 }
