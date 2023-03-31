@@ -31,6 +31,7 @@ ext {
 
 dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
 	implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
 	// implementation "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
@@ -39,6 +40,7 @@ dependencies {
 	implementation "org.springdoc:springdoc-openapi-webflux-ui:${openApiVersion}"
 
 	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+
 	//implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	//implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	//implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:3.1.5'
