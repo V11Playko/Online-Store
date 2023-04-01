@@ -3,10 +3,10 @@ package com.playko.store.infrastructure.out.jpa.entity;
 import com.playko.store.domain.model.ItemModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,9 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "tbl_item")
+@Table(name = "item")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Builder(toBuilder = true)
 public class ItemEntity implements Serializable {
 
@@ -31,9 +32,8 @@ public class ItemEntity implements Serializable {
     private Double quantityItem;
     private Double priceItem;
     private Long productId;
-    // Cada ítem pertenece a una factura
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "invoice_id")
+    @ManyToOne
+    @JoinColumn(name = "invoice_id", nullable = false)
     private InvoiceEntity invoice;
 
     public static List<ItemEntity> ofItemModelList(List<ItemModel> itemModelList) {

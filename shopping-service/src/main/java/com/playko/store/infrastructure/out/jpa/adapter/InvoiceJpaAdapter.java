@@ -4,8 +4,10 @@ import com.playko.store.domain.model.InvoiceModel;
 import com.playko.store.domain.spi.IInvoicePersistencePort;
 import com.playko.store.infrastructure.exception.NoDataFoundException;
 import com.playko.store.infrastructure.out.jpa.entity.InvoiceEntity;
+import com.playko.store.infrastructure.out.jpa.entity.ItemEntity;
 import com.playko.store.infrastructure.out.jpa.mapper.IInvoiceEntityMapper;
 import com.playko.store.infrastructure.out.jpa.repository.IInvoiceRepository;
+import com.playko.store.infrastructure.out.jpa.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class InvoiceJpaAdapter implements IInvoicePersistencePort {
     private final IInvoiceRepository invoiceRepository;
+    private final ItemRepository itemRepository;
     private final IInvoiceEntityMapper invoiceEntityMapper;
 
     @Override
@@ -32,7 +35,11 @@ public class InvoiceJpaAdapter implements IInvoicePersistencePort {
     @Override
     public void createInvoice(InvoiceModel invoice) {
         InvoiceEntity invoiceEntity = InvoiceEntity.ofInvoiceModel(invoice);
-        invoiceRepository.save(invoiceEntity);
+        invoiceEntity = invoiceRepository.save(invoiceEntity);
+        for (ItemEntity itemEntity : invoiceEntity.getItems()) {
+            itemEntity.setInvoice(InvoiceEntity.builder().id(invoiceEntity.getId()).build());
+            itemRepository.save(itemEntity);
+        }
     }
 
     @Override
