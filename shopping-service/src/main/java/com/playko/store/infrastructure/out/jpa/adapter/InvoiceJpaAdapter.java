@@ -18,7 +18,7 @@ public class InvoiceJpaAdapter implements IInvoicePersistencePort {
     @Override
     public List<InvoiceModel> findInvoiceAll() {
         List<InvoiceEntity> invoiceEntityList = invoiceRepository.findAll();
-        if (invoiceEntityList.isEmpty()){
+        if (invoiceEntityList.isEmpty()) {
             throw new NoDataFoundException();
         }
         return invoiceEntityMapper.toInvoiceModelList(invoiceEntityList);
@@ -31,13 +31,13 @@ public class InvoiceJpaAdapter implements IInvoicePersistencePort {
 
     @Override
     public void createInvoice(InvoiceModel invoice) {
-        InvoiceEntity invoiceEntity = invoiceEntityMapper.toEntity(invoice);
+        InvoiceEntity invoiceEntity = InvoiceEntity.ofInvoiceModel(invoice);
         invoiceRepository.save(invoiceEntity);
     }
 
     @Override
     public void updateInvoice(InvoiceModel invoice) {
-        invoiceRepository.save(invoiceEntityMapper.toEntity(invoice));
+        invoiceRepository.save(InvoiceEntity.ofInvoiceModel(invoice));
     }
 
     @Override
