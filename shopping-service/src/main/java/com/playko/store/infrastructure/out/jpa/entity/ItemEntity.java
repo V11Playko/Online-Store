@@ -1,5 +1,6 @@
 package com.playko.store.infrastructure.out.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -14,7 +15,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "tbl_item")
@@ -26,11 +29,7 @@ public class ItemEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idItem;
-    @Column(name = "Cantidad", length = 50)
     private Double quantityItem;
-    @Column(name = "Precio", length = 50)
     private Double priceItem;
-    @Column(name = "Id_Producto", length = 50)
     private Long productId;
-
 }

@@ -4,7 +4,6 @@ import com.playko.store.domain.model.CategoryModel;
 import com.playko.store.domain.model.ProductModel;
 import com.playko.store.domain.spi.IProductPersistencePort;
 import com.playko.store.infrastructure.exception.NoDataFoundException;
-import com.playko.store.infrastructure.out.jpa.entity.CategoryEntity;
 import com.playko.store.infrastructure.out.jpa.entity.ProductEntity;
 import com.playko.store.infrastructure.out.jpa.mapper.IProductEntityMapper;
 import com.playko.store.infrastructure.out.jpa.repository.IProductRepository;

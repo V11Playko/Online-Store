@@ -38,7 +38,7 @@ public class InvoiceHandler implements IInvoiceHandler {
     public void createInvoice(InvoiceRequestDto invoice) {
         invoice.setState("CREATED");
 
-        InvoiceModel invoiceModel = invoiceRequestMapper.toInvoiceRequest(invoice);
+        InvoiceModel invoiceModel = IInvoiceRequestMapper.toInvoiceRequest(invoice);
         invoiceServicePort.createInvoice(invoiceModel);
     }
 
@@ -50,7 +50,7 @@ public class InvoiceHandler implements IInvoiceHandler {
         invoiceModel.setNumber(invoice.getNumber());
         invoiceModel.setDescription(invoice.getDescription());
         invoiceModel.setCustomerId(invoice.getCustomerId());
-        invoiceModel.setItems(invoiceModel.getItem());
+        invoiceModel.setItem(invoiceModel.getItem());
 
         invoiceServicePort.updateInvoice(invoiceModel);
     }

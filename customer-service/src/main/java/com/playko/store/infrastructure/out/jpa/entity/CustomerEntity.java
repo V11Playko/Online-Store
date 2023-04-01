@@ -1,6 +1,5 @@
 package com.playko.store.infrastructure.out.jpa.entity;
 
-import com.playko.store.domain.model.RegionModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

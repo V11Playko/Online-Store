@@ -1,11 +1,9 @@
 package com.playko.store.application.dto.request;
 
-import com.playko.store.domain.model.InvoiceItemModel;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter

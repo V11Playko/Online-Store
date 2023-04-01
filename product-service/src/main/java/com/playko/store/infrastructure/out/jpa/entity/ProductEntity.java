@@ -22,7 +22,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "tbl_products")
+@Table(name = "tbl_product")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

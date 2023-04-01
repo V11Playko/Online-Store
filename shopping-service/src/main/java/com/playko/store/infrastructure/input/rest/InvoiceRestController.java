@@ -45,9 +45,9 @@ public class InvoiceRestController {
             @ApiResponse(responseCode = "409", description = "Invoice already exists", content = @Content)
     })
     @GetMapping("/all")
-    public ResponseEntity<List<InvoiceResponseDto>> listInvoice(@RequestParam(name = "invoiceId", required = false) Long invoiceId) {
+    public ResponseEntity<List<InvoiceResponseDto>> listInvoice(@RequestParam(name = "itemId", required = false) Long itemId) {
         List<InvoiceResponseDto> invoices = new ArrayList<>();
-        if (invoiceId == null){
+        if (itemId == null){
             invoices = invoiceHandler.listAllInvoice();
             if (invoices.isEmpty()){
                 return ResponseEntity.notFound().build();

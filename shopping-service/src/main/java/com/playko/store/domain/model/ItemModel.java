@@ -1,13 +1,13 @@
 package com.playko.store.domain.model;
 
-public class InvoiceItemModel {
+public class ItemModel {
     private Long idItem;
     private Double quantityItem;
     private Double priceItem;
     private Long productId;
     private Double subTotal;
 
-    public InvoiceItemModel(Long idItem, Double quantityItem, Double priceItem, Long productId, Double subTotal) {
+    public ItemModel(Long idItem, Double quantityItem, Double priceItem, Long productId, Double subTotal) {
         this.idItem = idItem;
         this.quantityItem = quantityItem;
         this.priceItem = priceItem;
@@ -15,7 +15,7 @@ public class InvoiceItemModel {
         this.subTotal = subTotal;
     }
 
-    public InvoiceItemModel() {
+    public ItemModel() {
 
     }
 
@@ -35,11 +35,11 @@ public class InvoiceItemModel {
         this.quantityItem = quantityItem;
     }
 
-    public Double getPrice() {
+    public Double getPriceItem() {
         return priceItem;
     }
 
-    public void setPrice(Double priceItem) {
+    public void setPriceItem(Double priceItem) {
         this.priceItem = priceItem;
     }
 

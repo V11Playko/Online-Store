@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "tbl_categories")
+@Table(name = "tbl_categorie")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
