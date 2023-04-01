@@ -3,7 +3,7 @@ package com.playko.store.application.dto.request;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -12,7 +12,7 @@ public class InvoiceRequestDto {
     private String number;
     private String description;
     private Long customerId;
-    private Date createAt;
+    private LocalDate createAt;
     private String state;
 
     // Invoice Item
