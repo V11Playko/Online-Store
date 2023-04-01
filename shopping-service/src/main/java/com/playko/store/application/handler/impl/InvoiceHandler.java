@@ -1,6 +1,7 @@
 package com.playko.store.application.handler.impl;
 
 import com.playko.store.application.dto.request.InvoiceRequestDto;
+import com.playko.store.application.dto.request.SaveInvoiceRequestDto;
 import com.playko.store.application.dto.response.InvoiceResponseDto;
 import com.playko.store.application.handler.IInvoiceHandler;
 import com.playko.store.application.mapper.IInvoiceRequestMapper;
@@ -35,22 +36,21 @@ public class InvoiceHandler implements IInvoiceHandler {
     }
 
     @Override
-    public void createInvoice(InvoiceRequestDto invoice) {
-        invoice.setState("CREATED");
-
-        InvoiceModel invoiceModel = IInvoiceRequestMapper.toInvoiceRequest(invoice);
+    public void createInvoice(SaveInvoiceRequestDto invoiceRequest) {
+        InvoiceModel invoiceModel = invoiceRequest.toInvoiceModel();
         invoiceServicePort.createInvoice(invoiceModel);
     }
 
     @Override
     public void updateInvoice(InvoiceRequestDto invoice) {
         InvoiceModel invoiceModel = invoiceServicePort.getInvoice(invoice.getId());
-        if (Strings.isNotBlank(invoice.getDescription()) || Strings.isNotEmpty(invoice.getDescription())) invoiceModel.setDescription(invoiceModel.getDescription());
+        if (Strings.isNotBlank(invoice.getDescription()) || Strings.isNotEmpty(invoice.getDescription()))
+            invoiceModel.setDescription(invoiceModel.getDescription());
 
         invoiceModel.setNumber(invoice.getNumber());
         invoiceModel.setDescription(invoice.getDescription());
         invoiceModel.setCustomerId(invoice.getCustomerId());
-        invoiceModel.setItem(invoiceModel.getItem());
+        //invoiceModel.setItem(invoiceModel.getItem());
 
         invoiceServicePort.updateInvoice(invoiceModel);
     }
