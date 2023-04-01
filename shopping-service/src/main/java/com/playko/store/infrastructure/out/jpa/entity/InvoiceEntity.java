@@ -33,7 +33,8 @@ public class InvoiceEntity implements Serializable {
     private Long customerId;
     private Date createAt;
     private String state;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "item_id")
-    private List<ItemEntity> item;
+
+    // Una factura puede tener muchos items
+    @OneToMany(mappedBy = "invoice",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ItemEntity> items;
 }

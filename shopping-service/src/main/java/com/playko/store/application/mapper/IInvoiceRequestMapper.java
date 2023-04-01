@@ -5,6 +5,7 @@ import com.playko.store.domain.model.InvoiceModel;
 import com.playko.store.domain.model.ItemModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 import org.mapstruct.ReportingPolicy;
 
 import java.util.ArrayList;
@@ -14,10 +15,10 @@ import java.util.List;
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface IInvoiceRequestMapper {
-    @Mapping(target = "item.idItem", source = "invoice.idItem")
-    @Mapping(target = "item.quantityItem", source = "invoice.quantityItem")
-    @Mapping(target = "item.priceItem", source = "invoice.priceItem")
-    @Mapping(target = "item.productId", source = "invoice.productId")
+    @Mapping(target="item.idItem", source="idItem")
+    @Mapping(target="item.quantityItem", source="quantityItem")
+    @Mapping(target="item.priceItem", source="priceItem")
+    @Mapping(target="item.productId", source="productId")
     static InvoiceModel toInvoiceRequest(InvoiceRequestDto invoice){
         InvoiceModel invoiceRequest = new InvoiceModel();
         invoiceRequest.setNumber(invoice.getNumber());

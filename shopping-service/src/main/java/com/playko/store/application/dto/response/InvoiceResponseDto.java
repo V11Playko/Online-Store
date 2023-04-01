@@ -16,5 +16,5 @@ public class InvoiceResponseDto {
     private Long customerId;
     private Date createAt;
     private String state;
-    private List<ItemModel> item;
+    private List<ItemModel> items;
 }

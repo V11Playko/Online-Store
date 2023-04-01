@@ -32,4 +32,8 @@ public class ItemEntity implements Serializable {
     private Double quantityItem;
     private Double priceItem;
     private Long productId;
+    // Cada ítem pertenece a una factura
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "invoice_id")
+    private InvoiceEntity invoice;
 }
