@@ -12,8 +12,8 @@ import java.util.List;
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface IInvoiceEntityMapper {
-    InvoiceEntity toEntity(InvoiceModel invoice);
     InvoiceModel toInvoiceModel(InvoiceEntity invoiceEntity);
+
     List<InvoiceModel> toInvoiceModelList(List<InvoiceEntity> invoiceEntityList);
 
 }
