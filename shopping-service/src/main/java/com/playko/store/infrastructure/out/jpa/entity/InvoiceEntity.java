@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,11 +36,12 @@ public class InvoiceEntity implements Serializable {
     private String state;
 
     // Una factura puede tener muchos items
-    @OneToMany(mappedBy = "invoice")
+    @OneToMany(mappedBy = "invoice", cascade = CascadeType.REMOVE)
     private List<ItemEntity> items;
 
     public static InvoiceEntity ofInvoiceModel(InvoiceModel invoiceModel) {
         return InvoiceEntity.builder()
+                .id(invoiceModel.getId())
                 .number(invoiceModel.getNumber())
                 .description(invoiceModel.getDescription())
                 .customerId(invoiceModel.getCustomerId())
