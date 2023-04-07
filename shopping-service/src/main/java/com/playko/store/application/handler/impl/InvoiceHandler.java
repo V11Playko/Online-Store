@@ -51,7 +51,6 @@ public class InvoiceHandler implements IInvoiceHandler {
         invoiceModel.setNumber(invoice.getNumber());
         invoiceModel.setDescription(invoice.getDescription());
         invoiceModel.setCustomerId(invoice.getCustomerId());
-        //invoiceModel.setItems(invoiceModel.getItems());
 
         invoiceServicePort.updateInvoice(invoiceModel);
     }
