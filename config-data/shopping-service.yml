@@ -6,7 +6,7 @@ spring:
   application:
     name: shopping-service
   datasource:
-    url: jdbc:mysql://localhost:3306/shopping-service
+    url: jdbc:mysql://localhost:3306/shoppping-service
     username: ${USER}
     password: ${PASSWORD}
   jpa:
