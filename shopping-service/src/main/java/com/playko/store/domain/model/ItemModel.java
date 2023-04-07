@@ -14,6 +14,5 @@ public class ItemModel {
     private Double quantityItem;
     private Double priceItem;
     private Long productId;
-    @JsonIgnore
     private Double subTotal;
 }
