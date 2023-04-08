@@ -4,14 +4,19 @@ server:
 
 spring:
   application:
-    name: costumer-service
+    name: customer-service
   datasource:
-    url: jdbc:mysql://localhost:3306/costumer-service
+    url: jdbc:mysql://localhost:3306/customer-service
     username: ${USER}
     password: ${PASSWORD}
+    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8099/eureka
 appDescription: "Online Store"
 appVersion: "1.0.0"
