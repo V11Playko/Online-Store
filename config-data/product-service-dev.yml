@@ -1,6 +1,6 @@
 #Application Configuration
 server:
-  port: 8081
+  port: 8090
 
 spring:
   application:
@@ -9,9 +9,14 @@ spring:
     url: jdbc:mysql://localhost:3306/product-service
     username: ${USER}
     password: ${PASSWORD}
+    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8099/eureka
 appDescription: "Online Store"
 appVersion: "1.0.0"
