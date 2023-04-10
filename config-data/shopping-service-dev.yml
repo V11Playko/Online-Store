@@ -9,7 +9,7 @@ spring:
     url: jdbc:mysql://localhost:3306/shopping-service
     username: ${USER}
     password: ${PASSWORD}
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
