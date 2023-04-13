@@ -13,4 +13,6 @@ public interface IProductServicePort {
      void updateProduct(ProductModel product);
      ProductModel deleteProduct(Long id);
      List<ProductModel> findByCategory(CategoryModel category);
+
+     void updateStock(ProductModel product);
 }

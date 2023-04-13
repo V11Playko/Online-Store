@@ -42,8 +42,8 @@ public class ProductUseCase implements IProductServicePort {
     public List<ProductModel> findByCategory(CategoryModel category) {
         return productPersistencePort.findByCategory(category);
     }
-
-
-
-
+    @Override
+    public void updateStock(ProductModel product) {
+        productPersistencePort.updateStock(product);
+    }
 }
