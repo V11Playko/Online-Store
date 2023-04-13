@@ -70,4 +70,15 @@ public class ProductHandler implements IProductHandler {
         return productResponseMapper.findByCategory(productServicePort.findByCategory(category));
     }
 
+    @Override
+    public void updateStock(Long id, Double quantity) {
+        ProductModel productDB = productServicePort.getProduct(id);
+        if (null == productDB){
+            return;
+        }
+        Double stock = productDB.getStock() + quantity;
+        productDB.setStock(stock);
+        productServicePort.updateStock(productDB);
+    }
+
 }

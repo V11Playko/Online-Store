@@ -50,4 +50,9 @@ public class ProductJpaAdapter implements IProductPersistencePort {
         List<ProductEntity> categoryList = productRepository.findAll();
         return productEntityMapper.toProductModelList(categoryList);
     }
+
+    @Override
+    public void updateStock(ProductModel product) {
+        productRepository.save(productEntityMapper.toEntity(product));
+    }
 }

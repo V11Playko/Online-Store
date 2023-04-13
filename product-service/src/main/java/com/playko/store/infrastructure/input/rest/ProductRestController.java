@@ -105,6 +105,12 @@ public class ProductRestController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    @PutMapping (value = "/{id}/stock")
+    public ResponseEntity<Void> updateStockProduct(@PathVariable  Long id ,@RequestParam(name = "quantity", required = true) Double quantity){
+        productHandler.updateStock(id, quantity);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
     private String formatMessage( BindingResult result){
         List<Map<String,String>> errors = result.getFieldErrors().stream()
                 .map(err ->{

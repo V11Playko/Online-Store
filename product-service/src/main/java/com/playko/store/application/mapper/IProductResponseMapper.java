@@ -25,4 +25,7 @@ public interface IProductResponseMapper {
     ProductResponseDto toResponseDeleteProduct(Long id);
     @Named("findCategory")
     List<ProductResponseDto> findByCategory(List<ProductModel> category);
+
+    @Named("updateStock")
+    ProductResponseDto updateStock(Long id, Double quantity);
 }
