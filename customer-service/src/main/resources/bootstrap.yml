@@ -9,3 +9,7 @@ spring:
       username: root
       password: s3cr3t
       profile: dev
+  boot:
+    admin:
+      client:
+        url: http://localhost:8086
