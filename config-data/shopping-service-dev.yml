@@ -18,5 +18,13 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8099/eureka
+Feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 appDescription: "Online Store"
 appVersion: "1.0.0"
