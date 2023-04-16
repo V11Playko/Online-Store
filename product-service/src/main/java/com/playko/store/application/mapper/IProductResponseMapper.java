@@ -1,9 +1,7 @@
 package com.playko.store.application.mapper;
 
 import com.playko.store.application.dto.response.ProductResponseDto;
-import com.playko.store.domain.model.CategoryModel;
 import com.playko.store.domain.model.ProductModel;
-import jdk.jfr.Category;
 import org.mapstruct.Mapper;
 import org.mapstruct.Named;
 import org.mapstruct.ReportingPolicy;

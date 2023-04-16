@@ -20,7 +20,9 @@ import java.util.List;
 @Transactional
 public class CustomerHandler implements ICustumerHandler {
     private final ICustumerServicePort custumerServicePort;
+
     private final ICustomerRequestMapper customerRequestMapper;
+
     private final ICustomerResponseMapper customerResponseMapper;
 
     @Override
@@ -45,7 +47,8 @@ public class CustomerHandler implements ICustumerHandler {
     @Override
     public void updateCustomer(CustomerRequestDto customer) {
         CustomerModel customerModel = custumerServicePort.getCustomer(customer.getId());
-        if (Strings.isNotBlank(customer.getDni()) || Strings.isNotEmpty(customer.getDni())) customerModel.setDni(customer.getDni());
+        if (Strings.isNotBlank(customer.getDni()) || Strings.isNotEmpty(customer.getDni()))
+            customerModel.setDni(customer.getDni());
 
         customerModel.setFirstName(customer.getFirstName());
         customerModel.setLastName(customer.getLastName());

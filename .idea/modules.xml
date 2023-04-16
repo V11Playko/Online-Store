@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/online-store.iml" filepath="$PROJECT_DIR$/.idea/modules/online-store.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin-service/online-store.admin-service.iml" filepath="$PROJECT_DIR$/.idea/modules/admin-service/online-store.admin-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server/online-store.config-server.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server/online-store.config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/customer-service/online-store.customer-service.iml" filepath="$PROJECT_DIR$/.idea/modules/customer-service/online-store.customer-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/customer-service/online-store.customer-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/customer-service/online-store.customer-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/discovery-server/online-store.discovery-server.iml" filepath="$PROJECT_DIR$/.idea/modules/discovery-server/online-store.discovery-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gateway-service/online-store.gateway-service.iml" filepath="$PROJECT_DIR$/.idea/modules/gateway-service/online-store.gateway-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service/online-store.product-service.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service/online-store.product-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service/online-store.product-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service/online-store.product-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shopping-service/online-store.shopping-service.iml" filepath="$PROJECT_DIR$/.idea/modules/shopping-service/online-store.shopping-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/shopping-service/online-store.shopping-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/shopping-service/online-store.shopping-service.main.iml" />
     </modules>
   </component>

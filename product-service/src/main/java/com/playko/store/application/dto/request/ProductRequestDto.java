@@ -1,6 +1,5 @@
 package com.playko.store.application.dto.request;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

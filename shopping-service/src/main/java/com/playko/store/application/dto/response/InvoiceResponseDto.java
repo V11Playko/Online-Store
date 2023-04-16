@@ -1,6 +1,5 @@
 package com.playko.store.application.dto.response;
 
-import com.playko.store.domain.model.ItemModel;
 import lombok.Getter;
 import lombok.Setter;
 

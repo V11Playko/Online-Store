@@ -3,7 +3,6 @@ package com.playko.store.application.handler;
 import com.playko.store.application.dto.request.ProductRequestDto;
 import com.playko.store.application.dto.response.ProductResponseDto;
 import com.playko.store.domain.model.CategoryModel;
-import com.playko.store.domain.model.ProductModel;
 
 import java.util.List;
 

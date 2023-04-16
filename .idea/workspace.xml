@@ -5,10 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bde4c63f-d8f1-4109-9b72-238e04dabe09" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/application/handler/ICustumerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/application/handler/ICustumerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/application/handler/impl/CustomerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/application/handler/impl/CustomerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/application/mapper/ICustomerResponseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/application/mapper/ICustomerResponseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/domain/spi/ICustomerPersistencePort.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/domain/spi/ICustomerPersistencePort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/infrastructure/configuration/BeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/playko/store/infrastructure/configuration/BeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/application/dto/request/ProductRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/application/dto/request/ProductRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/application/handler/IProductHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/application/handler/IProductHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/application/handler/impl/ProductHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/application/handler/impl/ProductHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/application/mapper/IProductResponseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/application/mapper/IProductResponseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/domain/spi/IProductPersistencePort.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/domain/spi/IProductPersistencePort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/infrastructure/input/rest/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/playko/store/infrastructure/input/rest/ProductRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/docs/Online Store.postman_collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/application/dto/response/InvoiceResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/application/dto/response/InvoiceResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/application/handler/IInvoiceHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/application/handler/IInvoiceHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/application/handler/impl/InvoiceHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/application/handler/impl/InvoiceHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/domain/model/ItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/domain/model/ItemModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/infrastructure/out/jpa/entity/ItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/java/com/playko/store/infrastructure/out/jpa/entity/ItemEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +84,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -190,19 +211,6 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="online-store" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="online-store" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <recent_temporary>
       <list>
