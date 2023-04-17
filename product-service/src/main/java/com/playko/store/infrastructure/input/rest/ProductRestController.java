@@ -39,37 +39,40 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductRestController {
     private final IProductHandler productHandler;
+
     private final ErrorMessage errorMessage;
+
     @Operation(summary = "Add a new Product")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Product created", content = @Content),
             @ApiResponse(responseCode = "409", description = "Product already exists", content = @Content)
     })
     @GetMapping("/all")
-    public ResponseEntity<List<ProductResponseDto>> listProduct(@RequestParam(name = "categoryId", required = false) Long categoryId){
+    public ResponseEntity<List<ProductResponseDto>> listProduct(@RequestParam(name = "categoryId", required = false) Long categoryId) {
         List<ProductResponseDto> products = new ArrayList<>();
-        if (categoryId == null){
+        if (categoryId == null) {
             products = productHandler.listAllProduct();
-            if (products.isEmpty()){
+            if (products.isEmpty()) {
                 return ResponseEntity.noContent().build();
             }
-        }else{
+        } else {
             products = productHandler.findByCategory((CategoryModel) products);
-            if (products.isEmpty()){
+            if (products.isEmpty()) {
                 return ResponseEntity.notFound().build();
             }
         }
         return ResponseEntity.ok(products);
-        }
+    }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<ProductResponseDto> getProduct(@PathVariable("id") Long id){
+    public ResponseEntity<ProductResponseDto> getProduct(@PathVariable("id") Long id) {
         ProductResponseDto product = productHandler.getProduct(id);
-        if (product == null){
+        if (product == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(product);
     }
+
     @Operation(summary = "Add a new Product")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Product created", content = @Content),
@@ -77,12 +80,13 @@ public class ProductRestController {
     })
     @PostMapping("/createProduct")
     public ResponseEntity<Void> createProduct(@RequestBody ProductRequestDto product, BindingResult result) {
-        if (result.hasErrors()){
+        if (result.hasErrors()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, this.formatMessage(result));
         }
         productHandler.createProduct(product);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
     @Operation(summary = "Updated Product")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Product Updated", content = @Content),
@@ -94,6 +98,7 @@ public class ProductRestController {
         productHandler.updateProduct(product);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
+
     @Operation(summary = "Delete Product")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Product Delete", content = @Content),
@@ -105,16 +110,16 @@ public class ProductRestController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @PutMapping (value = "/{id}/stock")
-    public ResponseEntity<Void> updateStockProduct(@PathVariable  Long id ,@RequestParam(name = "quantity", required = true) Double quantity){
+    @PutMapping(value = "/{id}/stock")
+    public ResponseEntity<Void> updateStockProduct(@PathVariable Long id, @RequestParam(name = "quantity", required = true) Double quantity) {
         productHandler.updateStock(id, quantity);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    private String formatMessage( BindingResult result){
-        List<Map<String,String>> errors = result.getFieldErrors().stream()
-                .map(err ->{
-                    Map<String,String>  error =  new HashMap<>();
+    private String formatMessage(BindingResult result) {
+        List<Map<String, String>> errors = result.getFieldErrors().stream()
+                .map(err -> {
+                    Map<String, String> error = new HashMap<>();
                     error.put(err.getField(), err.getDefaultMessage());
                     return error;
 
@@ -123,7 +128,7 @@ public class ProductRestController {
                 .code("01")
                 .messages(errors).build();
         ObjectMapper mapper = new ObjectMapper();
-        String jsonString="";
+        String jsonString = "";
         try {
             jsonString = mapper.writeValueAsString(errorMessage);
         } catch (JsonProcessingException e) {

@@ -15,12 +15,12 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class BeanConfiguration {
     @Bean("customerrPersistencePort")
-    public ICustomerPersistencePort customerPersistencePort(ICustomerRepository customerRepository, ICustomerEntityMapper customerEntityMapper){
+    public ICustomerPersistencePort customerPersistencePort(ICustomerRepository customerRepository, ICustomerEntityMapper customerEntityMapper) {
         return new CustomerJpaAdapter(customerRepository, customerEntityMapper);
     }
 
     @Bean("customerServicePort")
-    public ICustumerServicePort custumerServicePort(ICustomerPersistencePort customerPersistencePort){
+    public ICustumerServicePort custumerServicePort(ICustomerPersistencePort customerPersistencePort) {
         return new CustumerUseCase(customerPersistencePort);
     }
 

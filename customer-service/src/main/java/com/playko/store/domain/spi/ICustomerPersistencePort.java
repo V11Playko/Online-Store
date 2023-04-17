@@ -6,7 +6,6 @@ import com.playko.store.domain.model.RegionModel;
 import java.util.List;
 
 public interface ICustomerPersistencePort {
-    // Cambiar el model luego por el entity
     List<CustomerModel> listAllCustomer();
     CustomerModel getCustomer(Long id);
     void createCustomer(CustomerModel customerModel);

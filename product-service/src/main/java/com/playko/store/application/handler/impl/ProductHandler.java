@@ -8,7 +8,6 @@ import com.playko.store.application.mapper.IProductResponseMapper;
 import com.playko.store.domain.api.IProductServicePort;
 import com.playko.store.domain.model.CategoryModel;
 import com.playko.store.domain.model.ProductModel;
-import com.playko.store.infrastructure.out.jpa.repository.IProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;

@@ -1,0 +1,8 @@
+include 'customer-service'
+include 'product-service'
+include 'shopping-service'
+include 'config-server'
+include 'discovery-server'
+include 'gateway-service'
+include 'admin-service'
+rootProject.name = 'online-store'
